@@ -1,0 +1,45 @@
+<div class="project-page">
+  <header>{{project.name}}  - {{project.running && 'Running' || project.setup && 'Configured' || 'Not Configured'}}</header>
+  <div class="project-page-container">
+    <aside>
+      <ul>
+        <li><a ng-click="setSection('setup')">Setup</a></li>
+        <li><a ng-click="setSection('run')">On Demand</a></li>
+        <li><a ng-click="setSection('management')">Management</a></li>
+      </ul>
+    </aside>
+    <div class="content">
+      <div ng-if="section === 'setup'" ng-controller="setupController">
+        This is the setup section
+  
+        <div ng-if="isAdmin">
+          change configuration: <button ng-click="setupProject()">{{ project.setup ? 'Configured' : 'Not Configured' }}</button>
+        </div>
+        <div ng-if="!isAdmin">
+          You don't have permissions to change the configuration
+        </div>
+  
+      </div>
+      <div ng-if="section === 'run'" ng-controller="runController">
+        This is the run section
+  
+        <div ng-if="isBasic">
+          You don't have permissions to run a project
+        </div>
+        <div ng-if="!isBasic">
+          Run Project: <button ng-disabled="!project.setup" ng-click="runProject()">{{ project.running ? 'Running' : 'Not Running'}}</button>
+        </div>
+  
+      </div>
+      <div ng-if="section === 'management'" ng-controller="managementController">
+        <div ng-if="!isOwner">
+          You don't have permissions to delete this project.
+        </div>
+        <div ng-if="isOwner">
+          Do you want to delete this project?
+          <button ng-click="deleteProject()">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+{
+  "name": "refactor-me",
+  "version": "1.0.0",
+  "description": "Just a technical challenge",
+  "main": "index.js",
+  "scripts": {
+    "static": "http-server",
+    "db": "json-server db/db.json",
+    "start": "npm run static | npm run db",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Franco Alarcon",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.3.20",
+    "angular-route": "^1.3.20",
+    "http-server": "^0.11.1",
+    "json-server": "^0.14.2"
+  }
+}

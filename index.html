@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>refactor-me</title>
+  <link rel="stylesheet" href="src/app.css">
+</head>
+<body ng-app="refactor-me">
+  <ul class="navbar">
+    <li><a href="#/projects">Projects</a></li>
+    <li><a href="#/users">Users</a></li>
+  </ul>
+
+  <div ng-view></div>
+
+  <script src="node_modules/angular/angular.min.js"></script>
+  <script src="node_modules/angular-route/angular-route.min.js"></script>
+  <script src="node_modules/angular-mocks/angular-mocks.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>

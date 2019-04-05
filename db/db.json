@@ -1,0 +1,18 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "My project",
+      "owner": 2,
+      "setup": false,
+      "running": false
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "attackiq",
+      "role": "admin"
+    }
+  ]
+}
